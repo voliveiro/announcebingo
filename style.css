@@ -1,0 +1,97 @@
+body {
+    font-family: Arial; 
+    color: #0F0E0E; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 1.3vw;   
+    background-color: rgb(112, 7, 7);
+}
+
+@media only screen and (max-width: 768px) {
+    body{
+        font-size: 2vw; 
+    }
+    
+}
+
+.container {
+    background-color: white;
+    width: 80%; 
+    margin: 0 auto; 
+    padding-top: 10px; 
+    padding-bottom: 50px; 
+}
+
+@media only screen and (max-width: 768px) {
+    .container{
+        width: 90%; 
+    }
+    
+}
+header {
+    text-align: center; 
+}
+
+h1{
+    padding-top: 20px;
+    padding-bottom: 20px; 
+    font-family: 'Lobster', cursive; 
+    font-size: 3rem; 
+    color:rgb(112, 7, 7); 
+}
+
+.instructions {
+    margin-top: -50px;
+    color: rgb(112, 7, 7); 
+    font-size: 1vw; 
+    padding-bottom: 10px; 
+     
+}
+
+main {
+    display: flex; 
+    justify-content: center;
+}
+
+ 
+section {
+    width: 80%; 
+    display: flex;
+    flex-direction: column; 
+    flex-wrap: wrap;
+    text-align: center; 
+   
+}
+
+.row {
+    display:flex; 
+    flex-direction: row; 
+    height: 20%; 
+    
+}
+
+@media only screen and (max-width: 768px) {
+    .row{
+        display :flex; 
+        flex-direction: row; 
+    }
+    
+}
+.indiv-square {
+    height:80px;
+    width:18%;
+    border: 3px solid rgb(112, 7, 7);
+    padding: 20px 10px 20px 10px; 
+    text-align: center; 
+}
+
+@media only screen and (max-width: 768px) {
+    .indiv-square {
+        display :flex; 
+        flex-direction: row;
+        height:50px;
+        width:18%;
+        border: 3px solid rgb(112, 7, 7);
+        padding: 20px 10px 20px 10px; 
+        text-align: center; 
+    }
+}

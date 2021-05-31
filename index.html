@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy Meeting Bingo </title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+
+    <div class="container"> 
+
+        <header>
+
+            <h1> PM Addresses the Nation Bingo </h1>
+            <p class="instructions"> Click to select, double-click to deselect </p>
+        </header>
+        
+        <main>  
+            <section class="grid">
+                <div class="row rowA"> 
+                    <div class="indiv-square" id="A1"></div>
+                    <div class="indiv-square" id="A2"></div>
+                    <div class="indiv-square" id="A3"></div>
+                    <div class="indiv-square" id="A4"></div>
+                    <div class="indiv-square" id="A5"></div>
+                </div>
+                <div class="row rowB"> 
+                    <div class="indiv-square" id="B1"></div>
+                    <div class="indiv-square" id="B2"></div>
+                    <div class="indiv-square" id="B3"></div>
+                    <div class="indiv-square" id="B4"></div>
+                    <div class="indiv-square" id="B5"></div>
+                </div>
+                <div class="row rowC"> 
+                    <div class="indiv-square" id="C1"></div>
+                    <div class="indiv-square" id="C2"></div>
+                    <div class="indiv-square" id="C3"></div>
+                    <div class="indiv-square" id="C4"></div>
+                    <div class="indiv-square" id="C5"></div>
+                </div>
+                <div class="row rowD"> 
+                    <div class="indiv-square" id="D1"></div>
+                    <div class="indiv-square" id="D2"></div>
+                    <div class="indiv-square" id="D3"></div>
+                    <div class="indiv-square" id="D4"></div>
+                    <div class="indiv-square" id="D5"></div>
+                </div>
+                <div class="row rowE"> 
+                    <div class="indiv-square" id="E1"></div>
+                    <div class="indiv-square" id="E2"></div>
+                    <div class="indiv-square" id="E3"></div>
+                    <div class="indiv-square" id="E4"></div>
+                    <div class="indiv-square" id="E5"></div>
+                </div>
+            </section>
+        </main>
+
+        
+
+        <script> 
+            let buzzwordsArray = ["TraceTogether", "Work From Home", "Panic Buying", "Endemic", "Difficult Year for All of Us", "Opening Up", "Economy", "Let's Continue to Do Our Part", "Racism/\nXenophobia", "New Normal", "SG United", "Ringfence", "Phase 2 HA", "Cannot let our guard down/be complacent", "Phase 3", "My fellow Singaporeans", "essential services", "behave responsibly", "Vaccinations", "Students", "Safe Distancing", "Move forward together", "Frontline staff", "Resilient", "minimise physical contact"]
+
+        let gridIDs = ["A1", "A2", "A3", "A4", "A5", "B1", "B2", "B3", "B4", "B5", "C1", "C2", "C4", "C5", "D1", "D2", "D3", "D4", "D5", "E1", "E2", "E3", "E4", "E5"]
+
+        let bingoCard = []
+
+        for (let item of gridIDs) {
+            let squareValue = {}; 
+            squareValue.ID = item;
+            let selectedBuzzword = buzzwordsArray[Math.floor(Math.random()*buzzwordsArray.length)];
+            squareValue.buzzword = selectedBuzzword;
+            bingoCard.push(squareValue);
+            let indexNo = buzzwordsArray.indexOf(selectedBuzzword)
+            buzzwordsArray.splice(indexNo, 1)
+
+        }
+
+        console.log (bingoCard)
+
+
+        // Populate the Grid 
+
+        for (let item of bingoCard) {
+            //let IDstring=`${item.ID}` 
+            document.getElementById(item.ID).innerHTML=item.buzzword
+
+
+
+        document.querySelector(".grid").addEventListener('click', function(event) {
+            event.target.style.background="rgb(112, 7, 7)";
+            event.target.style.color="white"
+        })
+
+        document.querySelector(".grid").addEventListener('dblclick', function(event) {
+            event.target.style.background="white"
+            event.target.style.color="black"
+        })
+        }
+
+        </script>
+
+    </div>
+</body>
+</html>
